@@ -82,11 +82,12 @@ header.shadow{ /* For Scroll */
     color: var(--main-color);
 }
 #menu-icon{
-    font-size: 20px;
+    font-size: 25px;
     color: var(--text-color);
     z-index: 10001;
     cursor: pointer;
     display: none;
+    transform: translateY(-2px);
 }
 /* <---------- Implement Search Button ----------> */
 .search{
@@ -100,10 +101,15 @@ header.shadow{ /* For Scroll */
     backdrop-filter: blur(16px);
     padding: 8rem 1.5rem;
     transition: top .4s ease;
-}
-.search__form{
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.search__form{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     column-gap: .5rem;
     background-color: transparent;
     border-bottom: 1.5px solid #444;
@@ -114,7 +120,7 @@ header.shadow{ /* For Scroll */
     color: var(--second-color);
 }
 .search-input{
-    width: 100%;
+    width:100%;
     padding-block: 1rem;
     background-color: transparent;
     outline: none;
@@ -187,6 +193,32 @@ section{
     width: 70%;
     height: auto;
 }
+/* <------------ Why Choose Us -----------> */
+.why-choose{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.first i{
+    font-size: var(--h2-font);
+    color: var(--main-color);
+    cursor: pointer;
+}
+.first h5{
+    font-size: var(--p-font);
+}
+.first p{
+    font-size: 0.7rem;
+}
 /* <------- About Us ----------> */
 .about{
     width: 100%;
@@ -233,12 +265,17 @@ section{
     height: auto;
     margin-bottom: 10px;
     box-shadow: 0 5px 7px rgba(0,0,0,0.4);
-    transition: all 0.40s ease;
+    transition: all 0.40s ease-in-out;
 }
-.box img:hover{
-    box-shadow: 0 5px 7px rgba(0,0,0,0.7);
-    transform: scale(1.05);
+.box:hover{
+    transform: scale(1.10);
 }
+.box h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+} 
 .main-btn{
     margin-top: 2rem;
     display: flex;
@@ -255,15 +292,19 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.container{
-    transition: all .40s ease;
+    position: relative;
 }
 .container img{
     width: 150px;
     height: auto;
     cursor: pointer;
     box-shadow: 0 5px 7px rgba(0,0,0,0.7);
+}
+.container i{
+    position: absolute;
+    font-size: var(--h4-font);
+    color: var(--main-color);
+    visibility: hidden;
 }
 .container:hover{
     transform: translateY(-5px) scale(1.05);
@@ -403,5 +444,10 @@ footer{
     }
     .features-content{
         margin: 1.5rem 0;
+    }
+}
+@media (max-width: 450px){
+    header{
+        justify-content: space-around;
     }
 }

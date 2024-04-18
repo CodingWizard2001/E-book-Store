@@ -195,10 +195,10 @@ section{
 }
 /* <------------ Why Choose Us -----------> */
 .why-choose{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    text-align: center;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -417,7 +417,7 @@ footer{
         align-items: center;
         justify-content: center;
         flex-direction: column-reverse;
-        height: 135vh;
+        height: 145vh;
     }
     .btn{
         padding: 10px 25px;
@@ -444,6 +444,10 @@ footer{
     }
     .features-content{
         margin: 1.5rem 0;
+    }
+    .why-choose{
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
     }
 }
 @media (max-width: 450px){
